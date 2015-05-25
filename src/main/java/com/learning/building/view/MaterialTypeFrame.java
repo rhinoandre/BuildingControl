@@ -23,6 +23,7 @@ public class MaterialTypeFrame extends JFrame {
 	private JButton save;
 	private JButton cancel;
 	private JButton delete;
+	
 	@Autowired
 	private FormTwoColumnsUtility formUtility;
 	
@@ -87,7 +88,17 @@ public class MaterialTypeFrame extends JFrame {
 	public JButton getDelete() {
 		return delete;
 	}
-
+	
+	public MaterialType getMaterialType(){
+		MaterialType materialType = new MaterialType();
+		materialType.setName(nameTf.getText());
+		if(!idTf.getText().isEmpty()){
+			materialType.setId(Integer.parseInt(idTf.getText()));
+		}
+		
+		return materialType;
+	}
+	
 	public void setMaterialType(MaterialType materialType) {
 		if(materialType != null){
 			idTf.setText(materialType.getId().toString());

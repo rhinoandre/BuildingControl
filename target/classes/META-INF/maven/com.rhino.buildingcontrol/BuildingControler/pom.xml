@@ -3,15 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.springframework.samples.spring</groupId>
-	<artifactId>spring-hibernate-utility</artifactId>
+	<groupId>com.rhino.buildingcontrol</groupId>
+	<artifactId>BuildingControler</artifactId>
 	<version>1.0.0.CI-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>Spring Hibernate Utility</name>
-	<url>http://www.springframework.org</url>
-	<description>
-		<![CDATA[This project is a minimal jar utility with Spring configuration for Hibernate.]]>
-	</description>
+
 	<properties>
 		<maven.test.failure.ignore>true</maven.test.failure.ignore>
 		<spring.version>4.1.6.RELEASE</spring.version>
@@ -34,6 +31,12 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-validator</artifactId>
 			<version>4.3.1.Final</version>
+		</dependency>
+		
+	    <dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>5.1.35</version>
 		</dependency>
 		 <!-- Spring -->
         <dependency>
@@ -60,15 +63,17 @@
 	       <version>${spring.version}</version>
 	    </dependency>
 		<dependency>
-			<groupId>org.hsqldb</groupId>
-			<artifactId>hsqldb</artifactId>
-			<version>2.3.2</version>
-		</dependency>
-		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.16</version>
 		</dependency>
+		<!-- Jasper Report -->
+		<dependency>
+			<groupId>jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>3.5.3</version>
+		</dependency>
+		
 		
 		<!-- Joda-Time -->
 		<dependency>

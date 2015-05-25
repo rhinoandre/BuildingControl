@@ -36,7 +36,7 @@ public class Spent {
 	@JoinColumn(name="material_type_id")
 	private MaterialType materialType;
 	
-	@Column(nullable=false)
+	@Column(name="register_date", nullable=false)
 	@Type(type="org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
 	private LocalDate registerDate;
 

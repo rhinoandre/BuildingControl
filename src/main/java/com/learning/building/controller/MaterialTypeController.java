@@ -9,6 +9,8 @@ import javax.swing.JOptionPane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.learning.building.dao.GenericDAO;
+import com.learning.building.dao.MaterialTypeDaoImpl;
 import com.learning.building.model.MaterialType;
 import com.learning.building.view.MaterialTypeFrame;
 
@@ -17,6 +19,9 @@ public class MaterialTypeController {
 	
 	@Autowired
 	private MaterialTypeFrame frame;
+	
+	@Autowired
+	private GenericDAO<MaterialType> materialTypeDao;
 	
 	public MaterialTypeController() {
 		System.out.println("TypeSpentController has been created!");
@@ -31,7 +36,8 @@ public class MaterialTypeController {
 				if("".equals(frame.getTypeName().getText()) || frame.getTypeName().getText().isEmpty()){
 					JOptionPane.showMessageDialog(frame, "You should fill TYPE NAME field");
 				} else {
-					JOptionPane.showMessageDialog(frame, "Preciso arrumar o hibernate pra gravar");
+					materialTypeDao.save(frame.getMaterialType());
+					cleanUp();
 				}
 			}
 		});

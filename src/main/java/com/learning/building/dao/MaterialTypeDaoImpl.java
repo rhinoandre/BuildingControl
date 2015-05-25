@@ -30,8 +30,8 @@ public class MaterialTypeDaoImpl extends AbstractDao implements GenericDAO<Mater
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<MaterialType> getAll() {
-		return (List<MaterialType>) getSession().createCriteria(MaterialType.class).list();
+	public List getAll() {
+		return (List) getSession().createCriteria(MaterialType.class).list();
 	}
 
 	@Override
@@ -40,5 +40,4 @@ public class MaterialTypeDaoImpl extends AbstractDao implements GenericDAO<Mater
 		criteria.add(Restrictions.eq("id", id));
 		return (MaterialType) criteria.uniqueResult();
 	}
-
 }

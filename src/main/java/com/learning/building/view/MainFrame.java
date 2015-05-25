@@ -21,6 +21,8 @@ public class MainFrame extends JFrame {
 	private JMenu menu;
 	private JMenuItem newMaterial;
 	private JMenuItem newSpent;
+	private JMenuItem spentReport;
+	private JMenuItem materialReport;
 	
 	public MainFrame() {
 		System.out.println("MainFrame has been created");
@@ -32,8 +34,10 @@ public class MainFrame extends JFrame {
 		scrollPane = new JScrollPane();
 		scrollPane.setViewportView(spentTable);
 		
-		newMaterial = new JMenuItem("Novo Material");
-		newSpent = new JMenuItem("Novo Gasto");
+		newMaterial = new JMenuItem("New Material");
+		newSpent = new JMenuItem("New Spent");
+		spentReport = new JMenuItem("Spend List");
+		materialReport = new JMenuItem("Material List");
 		
 		menu = new JMenu("File");
 		menu.add(newMaterial);
@@ -41,8 +45,10 @@ public class MainFrame extends JFrame {
 		
 		menuBar = new JMenuBar();
 		menuBar.add(menu);
-
+		
 		menu = new JMenu("Reports");
+		menu.add(spentReport);
+		menu.add(materialReport);
 		menuBar.add(menu);
 		
 		setJMenuBar(menuBar);
@@ -67,7 +73,12 @@ public class MainFrame extends JFrame {
 	public JMenuItem getNewSpent() {
 		return newSpent;
 	}
-	
-	
-	
+
+	public JMenuItem getReport() {
+		return spentReport;
+	}
+
+	public JMenuItem getMaterialReport() {
+		return materialReport;
+	}
 }
