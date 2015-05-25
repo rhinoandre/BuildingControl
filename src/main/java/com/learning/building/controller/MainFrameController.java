@@ -75,8 +75,8 @@ public class MainFrameController {
 					}
 					
 					JasperReport pathJrxml = JasperCompileManager.compileReport("Reports//SpendList.jrxml");
-					JasperPrint jasperPrint = JasperFillManager.fillReport(pathJrxml, null, new JRBeanCollectionDataSource(list));
-					JasperExportManager.exportReportToPdfFile(jasperPrint, "relatorio/reportex.pdf");
+					JasperPrint jasperPrint = JasperFillManager.fillReport(pathJrxml, null, new JRBeanCollectionDataSource(list, false));
+					JasperExportManager.exportReportToPdfFile(jasperPrint, "C:/relatorios/reportex.pdf");
 					
 				} catch (JRException e) {
 					// TODO Auto-generated catch block
@@ -97,8 +97,8 @@ public class MainFrameController {
 					}
 					
 					JasperReport pathJrxml = JasperCompileManager.compileReport("Reports/MaterialList.jrxml");
-					JasperPrint jasperPrint = JasperFillManager.fillReport(pathJrxml, null, new JRBeanCollectionDataSource(list));
-					JasperExportManager.exportReportToPdfFile(jasperPrint, "relatorio/reportex.pdf");
+					JasperPrint jasperPrint = JasperFillManager.fillReport(pathJrxml, null, new JRBeanCollectionDataSource(list, false));
+					JasperExportManager.exportReportToPdfFile(jasperPrint, "C:/relatorios/reportex.pdf");
 					
 				} catch (JRException e) {
 					// TODO Auto-generated catch block
